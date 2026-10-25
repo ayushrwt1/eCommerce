@@ -1,3 +1,6 @@
+### Live Link
+https://ecommerce-take-home-assignment.netlify.app/
+
 # E-Commerce Product Catalog
 
 A React and Vite product catalog using DummyJSON for product and category data.
