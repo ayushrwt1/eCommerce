@@ -33,3 +33,14 @@ npm run build
 npm run lint
 npm run preview
 ```
+
+
+## Assumptions Made
+
+- DummyJSON is the product and category data source; this project does not include its own backend or database.
+- The app is a product catalog demonstration. Cart, account, and navbar search controls are visual only and do not perform actions.
+- Product prices are displayed in US dollars.
+- Users can select multiple categories and brands. The available brand checkboxes are a fixed list in the filter sidebar.
+- Price range values are applied when the user clicks **Apply**. The minimum and maximum bounds are inclusive.
+- The catalog requests products in pages of eight using the API's `limit` and `skip` parameters. Brand and price filtering is performed in the browser on the products loaded for the current API page.
+- Filter values and the current page are stored in Redux. Temporary UI state, such as unsubmitted price input and category-list expansion, remains local to the component.
