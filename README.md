@@ -45,7 +45,6 @@ npm run preview
 - The catalog requests products in pages of eight using the API's `limit` and `skip` parameters. Brand and price filtering is performed in the browser on the products loaded for the current API page.
 - Filter values and the current page are stored in Redux. Temporary UI state, such as unsubmitted price input and category-list expansion, remains local to the component.
 
-## Architectural Decisions
 
 ## Application Planning
 
@@ -91,6 +90,7 @@ Pages represent complete route destinations. Components represent reusable or fo
 - **`ProductCard` component:** Displays a product summary in the listing and links to its detail route.
 - **`App` component:** Defines the shared navbar and connects the route paths to their page components.
 
+## Architectural Decisions
 
 - **React with Vite:** React provides the component-based UI, while Vite handles the development server and production build.
 - **Page-based routing:** React Router maps `/` to the product listing and `/product/:id` to the product detail page.
@@ -100,3 +100,11 @@ Pages represent complete route destinations. Components represent reusable or fo
 - **Shared API client:** `src/utils/api.js` configures Axios with the base URL from `VITE_API_BASE_URL`, falling back to DummyJSON. Feature components make their endpoint requests through this client.
 - **Reusable UI components:** `ProductCard`, `FilterSidebar`, and `NavBar` separate repeated or distinct interface areas from the page-level components.
 - **Client-side secondary filters:** Category selection determines the paginated API request. Brand and price filters are applied in the browser to the products returned for that page.
+
+## Improvements If Given More Time
+
+- **Cart functionality:** Add products from the listing and detail pages, show a cart item count, and provide a cart page where users can change quantities, remove items, clear the cart, and review a subtotal.
+- **More product filters:** Add rating, stock availability, and discount filters, plus sorting options such as price ascending/descending and highest rated.
+- **Category search:** Add a search field to the category filter so users can quickly find a category instead of browsing the full checkbox list.
+- **Product search:** Make the navbar search functional, allowing users to find products by title or keywords and see matching results in the catalog.
+- **Coordinate all catalog controls:** Ensure search, additional filters, and sorting work together with category selection and pagination, resetting to the first page when the result set changes.
